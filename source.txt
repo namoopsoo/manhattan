@@ -1,0 +1,32 @@
+
+
+
+<!-- is this a comment-->
+(set: _person_name to "Dolphin Lewis")
+(set: _friend to "Samantha Pilot")
+(set: _correct_answer to "23")
+(set $visited_west_village to false)
+(set: $west_village_secret_correct to false)
+
+(if: $visited_west_village is false)[
+	hi, welcome to west village. my name is _person_name .
+	(set $visited_west_village to true)
+](else: )[
+	hi again. _person_name here. 
+]
+
+
+ Please help. Do you know where my friend _friend is ? 
+(input-box:2bind _location_answer,"=XX=",1)  (link: "tell me")[==
+you mean my friend is in _location_answer ?
+Hmm ok to show me you really met them, what's (link: "their favorite number?")[==
+(input-box:2bind _secret_answer,"=XX=",1)  (link: "tell me")[==
+(if: _secret_answer is _correct_answer )[
+	Yes that's right! How can I repay you! I have this clue about a secret treasure. Maybe it will help you? 
+	The clue is that the treasure is amazing haha. 
+	
+](else: ) [Hmm that's not quite right ] 
+
+[[try again ->west village]] 
+[[go to map -> map]]
+
