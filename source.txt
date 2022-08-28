@@ -1,12 +1,12 @@
 
-
-
 <!-- is this a comment-->
 (set: _person_name to "Dolphin Lewis")
 (set: _friend to "Samantha Pilot")
 (set: _correct_answer to "23")
 (set $visited_west_village to false)
 (set: $west_village_secret_correct to false)
+(set: $answered_secret_correctly to false)
+(set: _clue to "the treasure is amazing haha")
 
 (if: $visited_west_village is false)[
 	hi, welcome to west village. my name is _person_name .
@@ -15,18 +15,28 @@
 	hi again. _person_name here. 
 ]
 
+(if: $west_village_secret_correct is false )[
+	Please help. Do you know where my friend _friend is ? 
 
- Please help. Do you know where my friend _friend is ? 
-(input-box:2bind _location_answer,"=XX=",1)  (link: "tell me")[==
-you mean my friend is in _location_answer ?
-Hmm ok to show me you really met them, what's (link: "their favorite number?")[==
-(input-box:2bind _secret_answer,"=XX=",1)  (link: "tell me")[==
-(if: _secret_answer is _correct_answer )[
+	(input-box:2bind _location_answer,"=XX=",1)  (link: "tell me")[==
+	you mean my friend is in _location_answer ?
+
+	Hmm ok to show me you really met them, what's (link: "their favorite number?")[==
+	(input-box:2bind _secret_answer,"=XX=",1)  (link: "tell me")[==
+	(if: _secret_answer is _correct_answer )[
 	Yes that's right! How can I repay you! I have this clue about a secret treasure. Maybe it will help you? 
-	The clue is that the treasure is amazing haha. 
-	
-](else: ) [Hmm that's not quite right ] 
+	The clue is that _clue . 
+	(set: $west_village_secret_correct to true)
 
-[[try again ->west village]] 
+	](else: ) [Hmm that's not quite right 
+	[[try again ->west village]] 
+	] 
+
+](else:)[
+	Thanks for helping earlier. I hope that clue will come in handy. _clue 
+]
+
+
+
 [[go to map -> map]]
 
