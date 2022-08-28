@@ -1,16 +1,13 @@
-
 <!-- is this a comment-->
 (set: _person_name to "Dolphin Lewis")
 (set: _friend to "Samantha Pilot")
 (set: _correct_answer to "23")
-(set $visited_west_village to false)
-(set: $west_village_secret_correct to false)
-(set: $answered_secret_correctly to false)
+
 (set: _clue to "the treasure is amazing haha")
 
 (if: $visited_west_village is false)[
 	hi, welcome to west village. my name is _person_name .
-	(set $visited_west_village to true)
+	(set: $visited_west_village to true)
 ](else: )[
 	hi again. _person_name here. 
 ]
@@ -37,6 +34,9 @@
 ]
 
 
+[[go to map ->map]]
+(link: "by the way what is your favorite number?")[==
+Oh yea sure, it is $favorite_number_dolphin_lewis
 
-[[go to map -> map]]
+
 
