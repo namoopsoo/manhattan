@@ -1,29 +1,33 @@
+{
 <!-- is this a comment-->
+
 (set: _person_name to "Dolphin Lewis")
 (set: _friend to "Samantha Pilot")
-(set: _correct_answer to "23")
-
+(set: _correct_answer to $favorite_number_samantha_pilot)
+(set: _location_name to "west village")
 (set: _clue to "the treasure is amazing haha")
+}
+<img src="assets/640px-Walking_tiger_female.jpg">
 
 (if: $visited_west_village is false)[
-	hi, welcome to west village. my name is _person_name .
+	hi, welcome to _location_name. my name is _person_name .
 	(set: $visited_west_village to true)
 ](else: )[
 	hi again. _person_name here. 
 ]
 
-(if: $west_village_secret_correct is false )[
+(if: $secret_correct_west_village is false )[
 	Please help. Do you know where my friend _friend is ? 
 
 	(input-box:2bind _location_answer,"=XX=",1)  (link: "tell me")[==
 	you mean my friend is in _location_answer ?
 
-	Hmm ok to show me you really met them, what's (link: "their favorite number?")[==
+	Hmm ok to show me you really met them, what's their favorite number?  
 	(input-box:2bind _secret_answer,"=XX=",1)  (link: "tell me")[==
 	(if: _secret_answer is _correct_answer )[
 	Yes that's right! How can I repay you! I have this clue about a secret treasure. Maybe it will help you? 
 	The clue is that _clue . 
-	(set: $west_village_secret_correct to true)
+	(set: $secret_correct_west_village to true)
 
 	](else: ) [Hmm that's not quite right 
 	[[try again ->west village]] 
@@ -33,10 +37,15 @@
 	Thanks for helping earlier. I hope that clue will come in handy. _clue 
 ]
 
-
 [[go to map ->map]]
-(link: "by the way what is your favorite number?")[==
-Oh yea sure, it is $favorite_number_dolphin_lewis
+(link: "by the way what is your favorite number?")[
+Oh yea sure, it is $favorite_number_dolphin_lewis]
+
+
+<div style="font-size: xx-small;">
+By Charles J. Sharp - Own work, from Sharp Photography, sharpphotography.co.uk, CC BY-SA 4.0, https://commons.wikimedia.org/w/index.php?curid=98584814
+</div>
+
 
 
 
