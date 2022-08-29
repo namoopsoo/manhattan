@@ -3,7 +3,9 @@
 
 (set: _person_name to "Dolphin Lewis")
 (set: _friend to "Samantha Pilot")
+(set: _friend_actual_location to $location_samantha_pilot)
 (set: _correct_answer to $favorite_number_samantha_pilot)
+(set: _provided_friend_location to 0)
 (set: _location_name to "west village")
 (set: _clue to "the treasure is amazing haha")
 }
@@ -25,16 +27,32 @@
 	Hmm ok to show me you really met them, what's their favorite number?  
 	(input-box:2bind _secret_answer,"=XX=",1)  (link: "tell me")[==
 	(if: _secret_answer is _correct_answer )[
-	Yes that's right! How can I repay you! I have this clue about a secret treasure. Maybe it will help you? 
-	The clue is that _clue . 
-	(set: $secret_correct_west_village to true)
-
-	](else: ) [Hmm that's not quite right 
-	[[try again ->west village]] 
+		Yes that's right! Okay you must have met _friend ! I will go to _location_answer to check as soon as we finish talking!
+		(set: $secret_correct_west_village to true)
+		(set: $friend_location_provided_to_dolphin_lewis to _location_answer)
+	](else: ) [
+		Hmm that's not quite right. Maybe you have not met _friend . 
+		[[try again ->west village]] 
 	] 
 
 ](else:)[
-	Thanks for helping earlier. I hope that clue will come in handy. _clue 
+	Thanks for helping earlier. 
+	(if: $friend_location_provided_to_dolphin_lewis is _friend_actual_location)[
+		I went to _friend_actual_location and I found _friend ! Thanks for helping! As a thank you, here is this clue I can give you about a treasure I have heard about. $clue
+	](else: )[
+		(if: $all_locations contains $friend_location_provided_to_dolphin_lewis)[
+			By the way I went to $friend_location_provided_to_dolphin_lewis but I did not see _friend . Let me know if you happen to find them later.
+		](else:)[
+			By the way thanks for suggesting I look for _friend in $friend_location_provided_to_dolphin_lewis , but =D I could not find this place on the map! I am not sure if it is a real place haha. But let me know if you have another idea.
+		]
+		
+		(input-box:2bind _location_answer,"=XX=",1)  (link: "tell me")[==
+		(set: $friend_location_provided_to_dolphin_lewis to _location_answer)
+		Okay thanks I will look in _location_answer next then ! 
+		
+	]
+	
+	I hope that clue will come in handy. _clue 
 ]
 
 [[go to map ->map]]
