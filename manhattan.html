@@ -22,12 +22,22 @@
 &lt;!-- hells_kitchen --&gt;
 (set: $visited_hells_kitchen to false)
 (set: $secret_correct_hells_kitchen to false)
-</tw-passagedata><tw-passagedata pid="2" name="west village" tags="" position="299,233" size="100,100">{
+(set: $west_village to &quot;west village&quot;)
+(set: $hells_kitchen to &quot;hells kitchen&quot;)
+(set: $midtown to &quot;midtown&quot;)
+(set: $tribeca to &quot;tribeca&quot;)
+(set: $all_locations to (array: $west_village, $hells_kitchen, 
+	$midtown, $tribeca))
+	
+	
+(set: $location_samantha_pilot to $hells_kitchen)</tw-passagedata><tw-passagedata pid="2" name="west village" tags="" position="299,233" size="100,100">{
 &lt;!-- is this a comment--&gt;
 
 (set: _person_name to &quot;Dolphin Lewis&quot;)
 (set: _friend to &quot;Samantha Pilot&quot;)
+(set: _friend_actual_location to $location_samantha_pilot)
 (set: _correct_answer to $favorite_number_samantha_pilot)
+
 (set: _location_name to &quot;west village&quot;)
 (set: _clue to &quot;the treasure is amazing haha&quot;)
 }
@@ -49,16 +59,32 @@
 	Hmm ok to show me you really met them, what&#39;s their favorite number?  
 	(input-box:2bind _secret_answer,&quot;=XX=&quot;,1)  (link: &quot;tell me&quot;)[==
 	(if: _secret_answer is _correct_answer )[
-	Yes that&#39;s right! How can I repay you! I have this clue about a secret treasure. Maybe it will help you? 
-	The clue is that _clue . 
-	(set: $secret_correct_west_village to true)
-
-	](else: ) [Hmm that&#39;s not quite right 
-	[[try again -&gt;west village]] 
+		Yes that&#39;s right! Okay you must have met _friend ! I will go to _location_answer to check as soon as we finish talking!
+		(set: $secret_correct_west_village to true)
+		(set: $friend_location_provided_to_dolphin_lewis to _location_answer)
+	](else: ) [
+		Hmm that&#39;s not quite right. Maybe you have not met _friend . 
+		[[try again -&gt;west village]] 
 	] 
 
 ](else:)[
-	Thanks for helping earlier. I hope that clue will come in handy. _clue 
+	Thanks for helping earlier. 
+	(if: $friend_location_provided_to_dolphin_lewis is _friend_actual_location)[
+		I went to _friend_actual_location and I found _friend ! Thanks for helping! As a thank you, here is this clue I can give you about a treasure I have heard about. $clue
+	](else: )[
+		(if: $all_locations contains $friend_location_provided_to_dolphin_lewis)[
+			By the way I went to $friend_location_provided_to_dolphin_lewis but I did not see _friend . Let me know if you happen to find them later.
+		](else:)[
+			By the way thanks for suggesting I look for _friend in $friend_location_provided_to_dolphin_lewis , but =D I could not find this place on the map! Did you just make that up haha. But let me know if you have another idea.
+		]
+		
+		(input-box:2bind _location_answer,&quot;=XX=&quot;,1)  (link: &quot;tell me&quot;)[==
+		(set: $friend_location_provided_to_dolphin_lewis to _location_answer)
+		Okay thanks I will look in _location_answer next then ! 
+		
+	]
+	
+
 ]
 
 [[go to map -&gt;map]]

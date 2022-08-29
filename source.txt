@@ -5,7 +5,7 @@
 (set: _friend to "Samantha Pilot")
 (set: _friend_actual_location to $location_samantha_pilot)
 (set: _correct_answer to $favorite_number_samantha_pilot)
-(set: _provided_friend_location to 0)
+
 (set: _location_name to "west village")
 (set: _clue to "the treasure is amazing haha")
 }
@@ -38,12 +38,12 @@
 ](else:)[
 	Thanks for helping earlier. 
 	(if: $friend_location_provided_to_dolphin_lewis is _friend_actual_location)[
-		I went to _friend_actual_location and I found _friend ! Thanks for helping! As a thank you, here is this clue I can give you about a treasure I have heard about. $clue
+		I went to _friend_actual_location and I found _friend ! Thanks for helping! As a thank you, here is this clue I can give you about a treasure I have heard about. _clue
 	](else: )[
 		(if: $all_locations contains $friend_location_provided_to_dolphin_lewis)[
 			By the way I went to $friend_location_provided_to_dolphin_lewis but I did not see _friend . Let me know if you happen to find them later.
 		](else:)[
-			By the way thanks for suggesting I look for _friend in $friend_location_provided_to_dolphin_lewis , but =D I could not find this place on the map! I am not sure if it is a real place haha. But let me know if you have another idea.
+			By the way thanks for suggesting I look for _friend in $friend_location_provided_to_dolphin_lewis , but =D I could not find this place on the map! Did you just make that up haha. But let me know if you have another idea.
 		]
 		
 		(input-box:2bind _location_answer,"=XX=",1)  (link: "tell me")[==
@@ -52,7 +52,7 @@
 		
 	]
 	
-	I hope that clue will come in handy. _clue 
+
 ]
 
 [[go to map ->map]]
