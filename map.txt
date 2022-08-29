@@ -1,0 +1,7 @@
+the map
+[[west village]]
+[[hells kitchen]]
+
+<img src="assets/map.jpg" width="50%">
+
+
