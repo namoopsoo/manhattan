@@ -1,0 +1,72 @@
+
+
+
+{
+<!-- is this a comment-->
+
+(set: _person_name to "{{ occupant }}")
+(set: _friend to "{{ friend }}")
+(set: _friend_actual_location to $location_samantha_pilot)
+(set: _correct_answer to $favorite_number_samantha_pilot)
+
+(set: _location_name to "west village")
+(set: _clue to "the treasure is amazing haha")
+}
+<img src="assets/640px-Walking_tiger_female.jpg">
+
+(if: $visited_west_village is false)[
+	hi, welcome to _location_name. my name is _person_name .
+	(set: $visited_west_village to true)
+](else: )[
+	hi again. _person_name here. 
+]
+
+(if: $secret_correct_west_village is false )[
+	Please help. Do you know where my friend _friend is ? 
+
+	(input-box:2bind _location_answer,"=XX=",1)  (link: "tell me")[==
+	you mean my friend is in _location_answer ?
+
+	Hmm ok to show me you really met them, what's their favorite number?  
+	(input-box:2bind _secret_answer,"=XX=",1)  (link: "tell me")[==
+	(if: _secret_answer is _correct_answer )[
+		Yes that's right! Okay you must have met _friend ! I will go to _location_answer to check as soon as we finish talking!
+		(set: $secret_correct_west_village to true)
+		(set: $friend_location_provided_to_dolphin_lewis to _location_answer)
+	](else: ) [
+		Hmm that's not quite right. Maybe you have not met _friend . 
+		[[try again ->west village]] 
+	] 
+
+](else:)[
+	Thanks for helping earlier. 
+	(if: $friend_location_provided_to_dolphin_lewis is _friend_actual_location)[
+		I went to _friend_actual_location and I found _friend ! Thanks for helping! As a thank you, here is this clue I can give you about a treasure I have heard about. _clue
+	](else: )[
+		(if: $all_locations contains $friend_location_provided_to_dolphin_lewis)[
+			By the way I went to $friend_location_provided_to_dolphin_lewis but I did not see _friend . Let me know if you happen to find them later.
+		](else:)[
+			By the way thanks for suggesting I look for _friend in $friend_location_provided_to_dolphin_lewis , but =D I could not find this place on the map! Did you just make that up haha. But let me know if you have another idea.
+		]
+		
+		(input-box:2bind _location_answer,"=XX=",1)  (link: "tell me")[==
+		(set: $friend_location_provided_to_dolphin_lewis to _location_answer)
+		Okay thanks I will look in _location_answer next then ! 
+		
+	]
+	
+
+]
+
+[[go to map ->map]]
+(link: "by the way what is your favorite number?")[
+Oh yea sure, it is $favorite_number_dolphin_lewis]
+
+
+<div style="font-size: xx-small;">
+By Charles J. Sharp - Own work, from Sharp Photography, sharpphotography.co.uk, CC BY-SA 4.0, https://commons.wikimedia.org/w/index.php?curid=98584814
+</div>
+
+
+
+
