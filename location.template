@@ -61,7 +61,7 @@
 ]
 
 [[go to map ->map]]
-(link: "by the way what is your favorite number?")[
+(link: "by the way would you like to know my favorite number?")[
 Oh yea sure, it is {{ occupant.favorite_number }}  ]
 
 
