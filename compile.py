@@ -44,7 +44,7 @@ def make_begin_passage(world):
     (set: $secret_correct_west_village to false)
     (set: $favorite_number_dolphin_lewis to "876243")
     """
-    lines = []
+    lines = [ ]
     for record in world["occupants"]:
         location_snake = snake(record["location"])
 
@@ -59,5 +59,34 @@ def make_begin_passage(world):
         line = f"(set: $favorite_number_{snake_name} to \"{favorite_number}\")"
         lines.append(line)
 
-    return "\n".join(lines)
 
+    preamble = """:: Start
+Welcome to the Manhattan Story !
+(link: "Ready for adventure?")[==
+[[go to map ->map]]
+
+:: StoryTitle
+A Manhattan story.
+
+"""
+
+    return preamble + "\n".join(lines)
+
+def make_map_passage(world):
+
+    preamble = """
+:: map
+the map
+"""
+
+    lines = [ ]
+    for record in world["occupants"]:
+        location = record["location"]
+        line = f"[[{location}]]"
+        lines.append(line)
+
+    footer = """
+<img src="assets/map.jpg" width="50%">
+"""
+
+    return preamble + "\n".join(lines) + footer
