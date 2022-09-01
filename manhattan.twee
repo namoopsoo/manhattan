@@ -50,24 +50,20 @@ the map
 (if: $visited_west_village is false)[
 	hi, welcome to _location_name. my name is _person_name .
 	(set: $visited_west_village to true)
-](else: )[
-	hi again. _person_name here. 
-]
+](else: )[ hi again. _person_name here.  ]
 
 (if: $secret_correct_west_village is false )[
 	Please help. Do you know where my friend _friend is ? 
 
-    (set: _location_name to (prompt: [], "..", "hmm"))
-
-    (link: "ok ")[==
-
-    yea.
-
-	(input-box:2bind _location_answer,"=XX=",1)  (link: "tell me")[==
-	you mean my friend is in _location_answer ?
+    (link: "tell me ")[==
+    (set: _location_answer to (prompt: "what location?", ".." ))
+	Ohh! You mean my friend is in _location_answer ?
 
 	Hmm ok to show me you really met them, what's their favorite number?  
-	(input-box:2bind _secret_answer,"=XX=",1)  (link: "tell me")[==
+    (link: "tell me ")[==
+
+    (set: _secret_answer to (prompt: "what location?", ".." ))
+
 	(if: _secret_answer is _correct_answer )[
 		Yes that's right! Okay you must have met _friend ! I will go to _location_answer to check as soon as we finish talking!
 		(set: $secret_correct_west_village to true)
