@@ -3,15 +3,6 @@ Welcome to the Manhattan Story !
 (link: "Ready for adventure?")[==
 [[go to map ->map]]
 
-:: StoryTitle
-A Manhattan story.
-
-
-:: StoryData
-{
-	"ifid": "AFED6B55-7C3D-47E0-8C8A-52334B728D75"
-}
-
 (set: $visited_west_village to false)
 (set: $secret_correct_west_village to false)
 (set: $favorite_number_dolphin_lewis to "67895")
@@ -27,6 +18,15 @@ A Manhattan story.
 (set: $visited_harlem to false)
 (set: $secret_correct_harlem to false)
 (set: $favorite_number_karla_marla to "9873245")
+:: StoryTitle
+A Manhattan story.
+
+:: StoryData
+{
+	"ifid": "AFED6B55-7C3D-47E0-8C8A-52334B728D75"
+}
+
+
 :: map
 the map
 [[west village]]
