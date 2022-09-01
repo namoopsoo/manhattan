@@ -10,8 +10,13 @@ def read_world():
     with open("world.yaml", "r") as file:
         world = yaml.safe_load(file)
 
+    twee = ""
+
     begin_passage = make_begin_passage(world)
-    print(begin_passage)
+    twee += begin_passage
+
+    map_passage = make_map_passage(world)
+    twee += map_passage
     
     occupants = {glom(x, "occupant.name"): x for x in world["occupants"]}
     template = Path("location.template").read_text()
@@ -26,15 +31,10 @@ def read_world():
         data["location_snake"] = snake(record["location"])
         print(data)
 
-        output = Template(template).render(
-                data
-                # occupant="HiImAnOccupant",
-                # friend="Im a Friend"
-                )
-        print(output)
-        break
-    #return twee
-        # print(output)
+        output = Template(template).render(data)
+        twee += output
+
+    return twee
 def snake(x):
     return x.replace(" ", "_").lower()
 
