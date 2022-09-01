@@ -113,7 +113,7 @@ By Charles J. Sharp - Own work, from Sharp Photography, sharpphotography.co.uk, 
 (set: _location_name to "hells kitchen")
 
 (set: _clue to "the treasure is in the south of manhattan")}
-<img src="assets/347px-Canada_lynx_by_Michael_Zahra_(cropped).jpg">
+<img src="assets/347px-Canada_lynx_by_Michael_Zahra_cropped.jpg">
 (if: $visited_hells_kitchen is false)[
 	hi, welcome to _location_name. my name is _person_name .
 	(set: $visited_hells_kitchen to true)
