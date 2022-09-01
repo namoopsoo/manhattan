@@ -6,15 +6,15 @@
 
 (set: _person_name to "{{ occupant.name }}")
 (set: _friend to "{{ occupant.friend }}")
-(set: _friend_actual_location to $location_samantha_pilot)
+(set: _friend_actual_location to "{{ friend_location }}" )
 (set: _correct_answer to $favorite_number_samantha_pilot)
 
-(set: _location_name to "west village")
+(set: _location_name to "{{ location }}")
 (set: _clue to "the treasure is amazing haha")
 }
-<img src="assets/640px-Walking_tiger_female.jpg">
+<img src="assets/{{ photo.image }}">
 
-(if: $visited_west_village is false)[
+(if: $visited_{{ location }} is false)[
 	hi, welcome to _location_name. my name is _person_name .
 	(set: $visited_west_village to true)
 ](else: )[

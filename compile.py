@@ -15,8 +15,10 @@ def read_world():
     for record in world["occupants"]:
         friend = glom(record, "occupant.friend")
         friend_location = occupants[friend]["location"]
+        friend_favorite_number = occupants[friend]["occupant"]["favorite_number"]
         data = deepcopy(record)
         data["friend_location"] = friend_location
+        data["friend_favorite_number"] = friend_favorite_number
         print(data)
 
         output = Template(template).render(
