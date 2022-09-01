@@ -7,7 +7,7 @@
 (set: _person_name to "{{ occupant.name }}")
 (set: _friend to "{{ occupant.friend }}")
 (set: _friend_actual_location to "{{ friend_location }}" )
-(set: _correct_answer to $favorite_number_samantha_pilot)
+(set: _correct_answer to $favorite_number_{{ occupant.friend_snake }})
 
 (set: _location_name to "{{ location }}")
 (set: _clue to "the treasure is amazing haha")
@@ -53,7 +53,7 @@
 			By the way thanks for suggesting I look for _friend in $friend_location_provided_to_{{ occupant.name_snake }} , but =D I could not find this place on the map! Did you just make that up haha. But let me know if you have another idea.
 		]
         (link: "Ok please tell me")[==
-        (set: $friend_location_provided_to_{{ occupant.name_snake }} to (prompt: "what location?", ".." ))
+        (set: _location_answer to (prompt: "what location?", ".." ))
 		
 		(set: $friend_location_provided_to_{{ occupant.name_snake }} to _location_answer)
 		Okay thanks I will look in _location_answer next then ! 

@@ -24,10 +24,13 @@ def read_world(verbose=False):
         friend = glom(record, "occupant.friend")
         friend_location = occupants[friend]["location"]
         friend_favorite_number = occupants[friend]["occupant"]["favorite_number"]
+        friend_snake = snake(friend)
         data = deepcopy(record)
         data["friend_location"] = friend_location
         data["friend_favorite_number"] = friend_favorite_number
         data["occupant"]["name_snake"] = glom(record, "occupant.name").replace(" ", "_").lower()
+        data["occupant"]["friend_snake"] = friend_snake
+
         data["location_snake"] = snake(record["location"])
         if verbose:
             print(data)
@@ -60,6 +63,20 @@ def make_begin_passage(world):
         favorite_number = snake(record["occupant"]["favorite_number"])
         line = f"(set: $favorite_number_{snake_name} to \"{favorite_number}\")"
         lines.append(line)
+
+    # all locations line 
+    all_locations = [f"\"{x['location']}\"" for x in world["occupants"]]
+    all_locations_str = ", ".join(all_locations)
+    all_locations_str
+    line = f"(set: $all_locations to (array: {all_locations_str}))"
+
+    lines.append(line)
+
+    '''
+    (set: $all_locations to (array: $west_village, $hells_kitchen, 
+	$midtown, $tribeca))
+    '''
+    
 
 
     preamble = """:: Start

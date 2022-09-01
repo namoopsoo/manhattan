@@ -29,7 +29,8 @@
 (set: $favorite_number_skarlo_yapkinson to &quot;4632781&quot;)
 (set: $visited_harlem to false)
 (set: $secret_correct_harlem to false)
-(set: $favorite_number_karla_marla to &quot;9873245&quot;)</tw-passagedata><tw-passagedata pid="2" name="map" tags="" position="225,100" size="100,100">the map
+(set: $favorite_number_karla_marla to &quot;9873245&quot;)
+(set: $all_locations to (array: &quot;west village&quot;, &quot;hells kitchen&quot;, &quot;midtown&quot;, &quot;tribeca&quot;, &quot;harlem&quot;))</tw-passagedata><tw-passagedata pid="2" name="map" tags="" position="225,100" size="100,100">the map
 [[west village]]
 [[hells kitchen]]
 [[midtown]]
@@ -87,7 +88,7 @@
 			By the way thanks for suggesting I look for _friend in $friend_location_provided_to_dolphin_lewis , but =D I could not find this place on the map! Did you just make that up haha. But let me know if you have another idea.
 		]
         (link: &quot;Ok please tell me&quot;)[==
-        (set: $friend_location_provided_to_dolphin_lewis to (prompt: &quot;what location?&quot;, &quot;..&quot; ))
+        (set: _location_answer to (prompt: &quot;what location?&quot;, &quot;..&quot; ))
 		
 		(set: $friend_location_provided_to_dolphin_lewis to _location_answer)
 		Okay thanks I will look in _location_answer next then ! 
@@ -107,7 +108,7 @@ By Charles J. Sharp - Own work, from Sharp Photography, sharpphotography.co.uk, 
 (set: _person_name to &quot;Samantha Pilot&quot;)
 (set: _friend to &quot;Dolphin Lewis&quot;)
 (set: _friend_actual_location to &quot;west village&quot; )
-(set: _correct_answer to $favorite_number_samantha_pilot)
+(set: _correct_answer to $favorite_number_dolphin_lewis)
 
 (set: _location_name to &quot;hells kitchen&quot;)
 (set: _clue to &quot;the treasure is amazing haha&quot;)
@@ -153,7 +154,7 @@ By Charles J. Sharp - Own work, from Sharp Photography, sharpphotography.co.uk, 
 			By the way thanks for suggesting I look for _friend in $friend_location_provided_to_samantha_pilot , but =D I could not find this place on the map! Did you just make that up haha. But let me know if you have another idea.
 		]
         (link: &quot;Ok please tell me&quot;)[==
-        (set: $friend_location_provided_to_samantha_pilot to (prompt: &quot;what location?&quot;, &quot;..&quot; ))
+        (set: _location_answer to (prompt: &quot;what location?&quot;, &quot;..&quot; ))
 		
 		(set: $friend_location_provided_to_samantha_pilot to _location_answer)
 		Okay thanks I will look in _location_answer next then ! 
@@ -173,7 +174,7 @@ By Kevin Pluck - Flickr: The King., CC BY 2.0, https://commons.wikimedia.org/w/i
 (set: _person_name to &quot;Worldla Lion&quot;)
 (set: _friend to &quot;Dolphin Lewis&quot;)
 (set: _friend_actual_location to &quot;west village&quot; )
-(set: _correct_answer to $favorite_number_samantha_pilot)
+(set: _correct_answer to $favorite_number_dolphin_lewis)
 
 (set: _location_name to &quot;midtown&quot;)
 (set: _clue to &quot;the treasure is amazing haha&quot;)
@@ -219,7 +220,7 @@ By Kevin Pluck - Flickr: The King., CC BY 2.0, https://commons.wikimedia.org/w/i
 			By the way thanks for suggesting I look for _friend in $friend_location_provided_to_worldla_lion , but =D I could not find this place on the map! Did you just make that up haha. But let me know if you have another idea.
 		]
         (link: &quot;Ok please tell me&quot;)[==
-        (set: $friend_location_provided_to_worldla_lion to (prompt: &quot;what location?&quot;, &quot;..&quot; ))
+        (set: _location_answer to (prompt: &quot;what location?&quot;, &quot;..&quot; ))
 		
 		(set: $friend_location_provided_to_worldla_lion to _location_answer)
 		Okay thanks I will look in _location_answer next then ! 
@@ -239,7 +240,7 @@ By Michael Zahra - https://www.flickr.com/photos/mzahra1/4248818181/sizes/l/in/p
 (set: _person_name to &quot;Skarlo Yapkinson&quot;)
 (set: _friend to &quot;Karla Marla&quot;)
 (set: _friend_actual_location to &quot;harlem&quot; )
-(set: _correct_answer to $favorite_number_samantha_pilot)
+(set: _correct_answer to $favorite_number_karla_marla)
 
 (set: _location_name to &quot;tribeca&quot;)
 (set: _clue to &quot;the treasure is amazing haha&quot;)
@@ -285,7 +286,7 @@ By Michael Zahra - https://www.flickr.com/photos/mzahra1/4248818181/sizes/l/in/p
 			By the way thanks for suggesting I look for _friend in $friend_location_provided_to_skarlo_yapkinson , but =D I could not find this place on the map! Did you just make that up haha. But let me know if you have another idea.
 		]
         (link: &quot;Ok please tell me&quot;)[==
-        (set: $friend_location_provided_to_skarlo_yapkinson to (prompt: &quot;what location?&quot;, &quot;..&quot; ))
+        (set: _location_answer to (prompt: &quot;what location?&quot;, &quot;..&quot; ))
 		
 		(set: $friend_location_provided_to_skarlo_yapkinson to _location_answer)
 		Okay thanks I will look in _location_answer next then ! 
@@ -305,7 +306,7 @@ By James Temple - https://www.flickr.com/photos/jamestemple/312325101/, CC BY 2.
 (set: _person_name to &quot;Karla Marla&quot;)
 (set: _friend to &quot;Skarlo Yapkinson&quot;)
 (set: _friend_actual_location to &quot;tribeca&quot; )
-(set: _correct_answer to $favorite_number_samantha_pilot)
+(set: _correct_answer to $favorite_number_skarlo_yapkinson)
 
 (set: _location_name to &quot;harlem&quot;)
 (set: _clue to &quot;the treasure is amazing haha&quot;)
@@ -351,7 +352,7 @@ By James Temple - https://www.flickr.com/photos/jamestemple/312325101/, CC BY 2.
 			By the way thanks for suggesting I look for _friend in $friend_location_provided_to_karla_marla , but =D I could not find this place on the map! Did you just make that up haha. But let me know if you have another idea.
 		]
         (link: &quot;Ok please tell me&quot;)[==
-        (set: $friend_location_provided_to_karla_marla to (prompt: &quot;what location?&quot;, &quot;..&quot; ))
+        (set: _location_answer to (prompt: &quot;what location?&quot;, &quot;..&quot; ))
 		
 		(set: $friend_location_provided_to_karla_marla to _location_answer)
 		Okay thanks I will look in _location_answer next then ! 
