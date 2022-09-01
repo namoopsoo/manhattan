@@ -10,7 +10,7 @@
 (set: _correct_answer to $favorite_number_{{ occupant.friend_snake }})
 
 (set: _location_name to "{{ location }}")
-(set: _clue to {{ clue }} )
+(set: _clue to "{{ clue }}" )
 }
 <img src="assets/{{ photo.image }}">
 

@@ -48,7 +48,7 @@ the map
 (set: _correct_answer to $favorite_number_samantha_pilot)
 
 (set: _location_name to "west village")
-(set: _clue to some cats are not cats )
+(set: _clue to "some cats are not cats" )
 }
 <img src="assets/640px-Walking_tiger_female.jpg">
 
@@ -119,7 +119,7 @@ By Charles J. Sharp - Own work, from Sharp Photography, sharpphotography.co.uk, 
 (set: _correct_answer to $favorite_number_dolphin_lewis)
 
 (set: _location_name to "hells kitchen")
-(set: _clue to cats like to eat )
+(set: _clue to "cats like to eat" )
 }
 <img src="assets/640px-Lion_waiting_in_Namibia.jpg">
 
@@ -190,7 +190,7 @@ By Kevin Pluck - Flickr: The King., CC BY 2.0, https://commons.wikimedia.org/w/i
 (set: _correct_answer to $favorite_number_dolphin_lewis)
 
 (set: _location_name to "midtown")
-(set: _clue to yummy )
+(set: _clue to "yummy" )
 }
 <img src="assets/347px-Canada_lynx_by_Michael_Zahra_cropped.jpg">
 
@@ -261,7 +261,7 @@ By Michael Zahra - https://www.flickr.com/photos/mzahra1/4248818181/sizes/l/in/p
 (set: _correct_answer to $favorite_number_karla_marla)
 
 (set: _location_name to "tribeca")
-(set: _clue to have a nice day )
+(set: _clue to "have a nice day" )
 }
 <img src="assets/320px-TheCheethcat.jpg">
 
@@ -332,7 +332,7 @@ By James Temple - https://www.flickr.com/photos/jamestemple/312325101/, CC BY 2.
 (set: _correct_answer to $favorite_number_skarlo_yapkinson)
 
 (set: _location_name to "harlem")
-(set: _clue to I am hungry for zebras )
+(set: _clue to "I am hungry for zebras" )
 }
 <img src="assets/481px-African_leopard_male_cropped.jpg">
 
