@@ -1,0 +1,46 @@
+
+:: Start
+Welcome to the Manhattan Treasure Hunt!
+(link: "ready to find some treasure?")[==
+[[go to map ->map]]
+
+(set: $visited_west_village to false)
+(set: $secret_correct_west_village to false)
+(set: $favorite_number_dolphin_lewis to "876243")
+(set: $favorite_number_samantha_pilot to "87234786")
+
+
+<!-- hells_kitchen -->
+(set: $visited_hells_kitchen to false)
+(set: $secret_correct_hells_kitchen to false)
+(set: $west_village to "west village")
+(set: $hells_kitchen to "hells kitchen")
+(set: $midtown to "midtown")
+(set: $tribeca to "tribeca")
+(set: $all_locations to (array: $west_village, $hells_kitchen, 
+	$midtown, $tribeca))
+	
+(set: $location_samantha_pilot to $hells_kitchen)
+
+
+
+:: StoryTitle
+A Manhattan story.
+
+:: this place
+yep
+
+:: StoryData
+{
+	"ifid": "F1A0A70D-BD29-44DB-948D-B4AF83F0C7C9"
+}
+
+
+
+:: A passage with no tags
+Content of the "A passage with no tags" passage.
+
+
+:: A tagged passage with three tags [alfa bravo charlie]
+Content of the "A tagged passage with three tags" passage.
+The three tags are: alfa, bravo, charlie.
