@@ -90,3 +90,8 @@ the map
 """
 
     return preamble + "\n".join(lines) + footer
+
+
+def save_twee(twee, location):
+    with open(location, "w") as fd:
+        fd.write(twee)

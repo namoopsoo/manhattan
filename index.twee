@@ -1,0 +1,386 @@
+:: Start
+Welcome to the Manhattan Story !
+(link: "Ready for adventure?")[==
+[[go to map ->map]]
+
+:: StoryTitle
+A Manhattan story.
+
+(set: $visited_west_village to false)
+(set: $secret_correct_west_village to false)
+(set: $favorite_number_dolphin_lewis to "67895")
+(set: $visited_hells_kitchen to false)
+(set: $secret_correct_hells_kitchen to false)
+(set: $favorite_number_samantha_pilot to "87234")
+(set: $visited_midtown to false)
+(set: $secret_correct_midtown to false)
+(set: $favorite_number_worldla_lion to "56789")
+(set: $visited_tribeca to false)
+(set: $secret_correct_tribeca to false)
+(set: $favorite_number_skarlo_yapkinson to "4632781")
+(set: $visited_harlem to false)
+(set: $secret_correct_harlem to false)
+(set: $favorite_number_karla_marla to "9873245")
+:: map
+the map
+[[west village]]
+[[hells kitchen]]
+[[midtown]]
+[[tribeca]]
+[[harlem]]
+<img src="assets/map.jpg" width="50%">
+
+
+:: west village
+{
+<!-- is this a comment-->
+
+(set: _person_name to "Dolphin Lewis")
+(set: _friend to "Samantha Pilot")
+(set: _friend_actual_location to "hells kitchen" )
+(set: _correct_answer to $favorite_number_samantha_pilot)
+
+(set: _location_name to "west village")
+(set: _clue to "the treasure is amazing haha")
+}
+<img src="assets/640px-Walking_tiger_female.jpg">
+
+(if: $visited_west_village is false)[
+	hi, welcome to _location_name. my name is _person_name .
+	(set: $visited_west_village to true)
+](else: )[
+	hi again. _person_name here. 
+]
+
+(if: $secret_correct_west_village is false )[
+	Please help. Do you know where my friend _friend is ? 
+
+    (link: "tell me ")[==
+    (set: _location_answer to (prompt: "what location?", ".." ))
+	Ohh! You mean my friend is in _location_answer ?
+
+	Hmm ok to show me you really met them, what's their favorite number?  
+    (link: "tell me ")[==
+
+    (set: _secret_answer to (prompt: "what location?", ".." ))
+
+	(if: _secret_answer is _correct_answer )[
+		Yes that's right! Okay you must have met _friend ! I will go to _location_answer to check as soon as we finish talking!
+		(set: $secret_correct_west_village to true)
+		(set: $friend_location_provided_to_dolphin_lewis to _location_answer)
+	](else: ) [
+		Hmm that's not quite right. Maybe you have not met _friend . 
+		[[try again ->west village]] 
+	] 
+
+](else:)[
+	Thanks for helping earlier. 
+	(if: $friend_location_provided_to_dolphin_lewis is _friend_actual_location)[
+		I went to _friend_actual_location and I found _friend ! Thanks for helping! As a thank you, here is this clue I can give you about a treasure I have heard about. _clue
+	](else: )[
+		(if: $all_locations contains $friend_location_provided_to_dolphin_lewis)[
+			By the way I went to $friend_location_provided_to_dolphin_lewis but I did not see _friend . Let me know if you happen to find them later.
+		](else:)[
+			By the way thanks for suggesting I look for _friend in $friend_location_provided_to_dolphin_lewis , but =D I could not find this place on the map! Did you just make that up haha. But let me know if you have another idea.
+		]
+        (link: "Ok tell me")[==
+        (set: $friend_location_provided_to_dolphin_lewis to (prompt: "what location?", ".." ))
+		
+		(set: $friend_location_provided_to_dolphin_lewis to _location_answer)
+		Okay thanks I will look in _location_answer next then ! 
+	]
+]
+
+[[go to map ->map]]
+(link: "by the way what is your favorite number?")[
+Oh yea sure, it is 67895  ]
+
+
+<div style="font-size: xx-small;">
+By Charles J. Sharp - Own work, from Sharp Photography, sharpphotography.co.uk, CC BY-SA 4.0, https://commons.wikimedia.org/w/index.php?curid=98584814
+</div>
+
+
+
+:: hells kitchen
+{
+<!-- is this a comment-->
+
+(set: _person_name to "Samantha Pilot")
+(set: _friend to "Dolphin Lewis")
+(set: _friend_actual_location to "west village" )
+(set: _correct_answer to $favorite_number_samantha_pilot)
+
+(set: _location_name to "hells kitchen")
+(set: _clue to "the treasure is amazing haha")
+}
+<img src="assets/640px-Lion_waiting_in_Namibia.jpg">
+
+(if: $visited_hells_kitchen is false)[
+	hi, welcome to _location_name. my name is _person_name .
+	(set: $visited_hells_kitchen to true)
+](else: )[
+	hi again. _person_name here. 
+]
+
+(if: $secret_correct_hells_kitchen is false )[
+	Please help. Do you know where my friend _friend is ? 
+
+    (link: "tell me ")[==
+    (set: _location_answer to (prompt: "what location?", ".." ))
+	Ohh! You mean my friend is in _location_answer ?
+
+	Hmm ok to show me you really met them, what's their favorite number?  
+    (link: "tell me ")[==
+
+    (set: _secret_answer to (prompt: "what location?", ".." ))
+
+	(if: _secret_answer is _correct_answer )[
+		Yes that's right! Okay you must have met _friend ! I will go to _location_answer to check as soon as we finish talking!
+		(set: $secret_correct_hells_kitchen to true)
+		(set: $friend_location_provided_to_samantha_pilot to _location_answer)
+	](else: ) [
+		Hmm that's not quite right. Maybe you have not met _friend . 
+		[[try again ->hells kitchen]] 
+	] 
+
+](else:)[
+	Thanks for helping earlier. 
+	(if: $friend_location_provided_to_samantha_pilot is _friend_actual_location)[
+		I went to _friend_actual_location and I found _friend ! Thanks for helping! As a thank you, here is this clue I can give you about a treasure I have heard about. _clue
+	](else: )[
+		(if: $all_locations contains $friend_location_provided_to_samantha_pilot)[
+			By the way I went to $friend_location_provided_to_samantha_pilot but I did not see _friend . Let me know if you happen to find them later.
+		](else:)[
+			By the way thanks for suggesting I look for _friend in $friend_location_provided_to_samantha_pilot , but =D I could not find this place on the map! Did you just make that up haha. But let me know if you have another idea.
+		]
+        (link: "Ok tell me")[==
+        (set: $friend_location_provided_to_samantha_pilot to (prompt: "what location?", ".." ))
+		
+		(set: $friend_location_provided_to_samantha_pilot to _location_answer)
+		Okay thanks I will look in _location_answer next then ! 
+	]
+]
+
+[[go to map ->map]]
+(link: "by the way what is your favorite number?")[
+Oh yea sure, it is 87234  ]
+
+
+<div style="font-size: xx-small;">
+By Kevin Pluck - Flickr: The King., CC BY 2.0, https://commons.wikimedia.org/w/index.php?curid=755560
+</div>
+
+
+
+:: midtown
+{
+<!-- is this a comment-->
+
+(set: _person_name to "Worldla Lion")
+(set: _friend to "Dolphin Lewis")
+(set: _friend_actual_location to "west village" )
+(set: _correct_answer to $favorite_number_samantha_pilot)
+
+(set: _location_name to "midtown")
+(set: _clue to "the treasure is amazing haha")
+}
+<img src="assets/347px-Canada_lynx_by_Michael_Zahra_cropped.jpg">
+
+(if: $visited_midtown is false)[
+	hi, welcome to _location_name. my name is _person_name .
+	(set: $visited_midtown to true)
+](else: )[
+	hi again. _person_name here. 
+]
+
+(if: $secret_correct_midtown is false )[
+	Please help. Do you know where my friend _friend is ? 
+
+    (link: "tell me ")[==
+    (set: _location_answer to (prompt: "what location?", ".." ))
+	Ohh! You mean my friend is in _location_answer ?
+
+	Hmm ok to show me you really met them, what's their favorite number?  
+    (link: "tell me ")[==
+
+    (set: _secret_answer to (prompt: "what location?", ".." ))
+
+	(if: _secret_answer is _correct_answer )[
+		Yes that's right! Okay you must have met _friend ! I will go to _location_answer to check as soon as we finish talking!
+		(set: $secret_correct_midtown to true)
+		(set: $friend_location_provided_to_worldla_lion to _location_answer)
+	](else: ) [
+		Hmm that's not quite right. Maybe you have not met _friend . 
+		[[try again ->midtown]] 
+	] 
+
+](else:)[
+	Thanks for helping earlier. 
+	(if: $friend_location_provided_to_worldla_lion is _friend_actual_location)[
+		I went to _friend_actual_location and I found _friend ! Thanks for helping! As a thank you, here is this clue I can give you about a treasure I have heard about. _clue
+	](else: )[
+		(if: $all_locations contains $friend_location_provided_to_worldla_lion)[
+			By the way I went to $friend_location_provided_to_worldla_lion but I did not see _friend . Let me know if you happen to find them later.
+		](else:)[
+			By the way thanks for suggesting I look for _friend in $friend_location_provided_to_worldla_lion , but =D I could not find this place on the map! Did you just make that up haha. But let me know if you have another idea.
+		]
+        (link: "Ok tell me")[==
+        (set: $friend_location_provided_to_worldla_lion to (prompt: "what location?", ".." ))
+		
+		(set: $friend_location_provided_to_worldla_lion to _location_answer)
+		Okay thanks I will look in _location_answer next then ! 
+	]
+]
+
+[[go to map ->map]]
+(link: "by the way what is your favorite number?")[
+Oh yea sure, it is 56789  ]
+
+
+<div style="font-size: xx-small;">
+By Michael Zahra - https://www.flickr.com/photos/mzahra1/4248818181/sizes/l/in/photostream/, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=90116315 
+</div>
+
+
+
+:: tribeca
+{
+<!-- is this a comment-->
+
+(set: _person_name to "Skarlo Yapkinson")
+(set: _friend to "Karla Marla")
+(set: _friend_actual_location to "harlem" )
+(set: _correct_answer to $favorite_number_samantha_pilot)
+
+(set: _location_name to "tribeca")
+(set: _clue to "the treasure is amazing haha")
+}
+<img src="assets/320px-TheCheethcat.jpg">
+
+(if: $visited_tribeca is false)[
+	hi, welcome to _location_name. my name is _person_name .
+	(set: $visited_tribeca to true)
+](else: )[
+	hi again. _person_name here. 
+]
+
+(if: $secret_correct_tribeca is false )[
+	Please help. Do you know where my friend _friend is ? 
+
+    (link: "tell me ")[==
+    (set: _location_answer to (prompt: "what location?", ".." ))
+	Ohh! You mean my friend is in _location_answer ?
+
+	Hmm ok to show me you really met them, what's their favorite number?  
+    (link: "tell me ")[==
+
+    (set: _secret_answer to (prompt: "what location?", ".." ))
+
+	(if: _secret_answer is _correct_answer )[
+		Yes that's right! Okay you must have met _friend ! I will go to _location_answer to check as soon as we finish talking!
+		(set: $secret_correct_tribeca to true)
+		(set: $friend_location_provided_to_skarlo_yapkinson to _location_answer)
+	](else: ) [
+		Hmm that's not quite right. Maybe you have not met _friend . 
+		[[try again ->tribeca]] 
+	] 
+
+](else:)[
+	Thanks for helping earlier. 
+	(if: $friend_location_provided_to_skarlo_yapkinson is _friend_actual_location)[
+		I went to _friend_actual_location and I found _friend ! Thanks for helping! As a thank you, here is this clue I can give you about a treasure I have heard about. _clue
+	](else: )[
+		(if: $all_locations contains $friend_location_provided_to_skarlo_yapkinson)[
+			By the way I went to $friend_location_provided_to_skarlo_yapkinson but I did not see _friend . Let me know if you happen to find them later.
+		](else:)[
+			By the way thanks for suggesting I look for _friend in $friend_location_provided_to_skarlo_yapkinson , but =D I could not find this place on the map! Did you just make that up haha. But let me know if you have another idea.
+		]
+        (link: "Ok tell me")[==
+        (set: $friend_location_provided_to_skarlo_yapkinson to (prompt: "what location?", ".." ))
+		
+		(set: $friend_location_provided_to_skarlo_yapkinson to _location_answer)
+		Okay thanks I will look in _location_answer next then ! 
+	]
+]
+
+[[go to map ->map]]
+(link: "by the way what is your favorite number?")[
+Oh yea sure, it is 4632781  ]
+
+
+<div style="font-size: xx-small;">
+By James Temple - https://www.flickr.com/photos/jamestemple/312325101/, CC BY 2.0, https://commons.wikimedia.org/w/index.php?curid=7823028
+</div>
+
+
+
+:: harlem
+{
+<!-- is this a comment-->
+
+(set: _person_name to "Karla Marla")
+(set: _friend to "Skarlo Yapkinson")
+(set: _friend_actual_location to "tribeca" )
+(set: _correct_answer to $favorite_number_samantha_pilot)
+
+(set: _location_name to "harlem")
+(set: _clue to "the treasure is amazing haha")
+}
+<img src="assets/481px-African_leopard_male_cropped.jpg">
+
+(if: $visited_harlem is false)[
+	hi, welcome to _location_name. my name is _person_name .
+	(set: $visited_harlem to true)
+](else: )[
+	hi again. _person_name here. 
+]
+
+(if: $secret_correct_harlem is false )[
+	Please help. Do you know where my friend _friend is ? 
+
+    (link: "tell me ")[==
+    (set: _location_answer to (prompt: "what location?", ".." ))
+	Ohh! You mean my friend is in _location_answer ?
+
+	Hmm ok to show me you really met them, what's their favorite number?  
+    (link: "tell me ")[==
+
+    (set: _secret_answer to (prompt: "what location?", ".." ))
+
+	(if: _secret_answer is _correct_answer )[
+		Yes that's right! Okay you must have met _friend ! I will go to _location_answer to check as soon as we finish talking!
+		(set: $secret_correct_harlem to true)
+		(set: $friend_location_provided_to_karla_marla to _location_answer)
+	](else: ) [
+		Hmm that's not quite right. Maybe you have not met _friend . 
+		[[try again ->harlem]] 
+	] 
+
+](else:)[
+	Thanks for helping earlier. 
+	(if: $friend_location_provided_to_karla_marla is _friend_actual_location)[
+		I went to _friend_actual_location and I found _friend ! Thanks for helping! As a thank you, here is this clue I can give you about a treasure I have heard about. _clue
+	](else: )[
+		(if: $all_locations contains $friend_location_provided_to_karla_marla)[
+			By the way I went to $friend_location_provided_to_karla_marla but I did not see _friend . Let me know if you happen to find them later.
+		](else:)[
+			By the way thanks for suggesting I look for _friend in $friend_location_provided_to_karla_marla , but =D I could not find this place on the map! Did you just make that up haha. But let me know if you have another idea.
+		]
+        (link: "Ok tell me")[==
+        (set: $friend_location_provided_to_karla_marla to (prompt: "what location?", ".." ))
+		
+		(set: $friend_location_provided_to_karla_marla to _location_answer)
+		Okay thanks I will look in _location_answer next then ! 
+	]
+]
+
+[[go to map ->map]]
+(link: "by the way what is your favorite number?")[
+Oh yea sure, it is 9873245  ]
+
+
+<div style="font-size: xx-small;">
+By Sumeet Moghe - File:African_leopard_male.jpg, CC BY-SA 4.0, https://commons.wikimedia.org/w/index.php?curid=107561790
+</div>
+
