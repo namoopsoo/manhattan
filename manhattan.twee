@@ -87,10 +87,7 @@ the map
 		(input-box:2bind _location_answer,"=XX=",1)  (link: "tell me")[==
 		(set: $friend_location_provided_to_dolphin_lewis to _location_answer)
 		Okay thanks I will look in _location_answer next then ! 
-		
 	]
-	
-
 ]
 
 [[go to map ->map]]
