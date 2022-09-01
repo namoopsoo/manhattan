@@ -24,12 +24,12 @@
 (if: $secret_correct_{{ location_snake }} is false )[
 	Please help. Do you know where my friend _friend is ? 
 
-    (link: "tell me ")[==
+    (link: "Please tell me ")[==
     (set: _location_answer to (prompt: "what location?", ".." ))
 	Ohh! You mean my friend is in _location_answer ?
 
 	Hmm ok to show me you really met them, what's their favorite number?  
-    (link: "tell me ")[==
+    (link: "Please tell me ")[==
 
     (set: _secret_answer to (prompt: "that number?", ".." ))
 
@@ -52,7 +52,7 @@
 		](else:)[
 			By the way thanks for suggesting I look for _friend in $friend_location_provided_to_{{ occupant.name_snake }} , but =D I could not find this place on the map! Did you just make that up haha. But let me know if you have another idea.
 		]
-        (link: "Ok tell me")[==
+        (link: "Ok please tell me")[==
         (set: $friend_location_provided_to_{{ occupant.name_snake }} to (prompt: "what location?", ".." ))
 		
 		(set: $friend_location_provided_to_{{ occupant.name_snake }} to _location_answer)
