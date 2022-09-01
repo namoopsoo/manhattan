@@ -21,7 +21,7 @@
 	hi again. _person_name here. 
 ]
 
-(if: $secret_correct_west_village is false )[
+(if: $secret_correct_{{ location }} is false )[
 	Please help. Do you know where my friend _friend is ? 
 
     (link: "tell me ")[==
@@ -35,11 +35,11 @@
 
 	(if: _secret_answer is _correct_answer )[
 		Yes that's right! Okay you must have met _friend ! I will go to _location_answer to check as soon as we finish talking!
-		(set: $secret_correct_west_village to true)
+		(set: $secret_correct_{{ location }} to true)
 		(set: $friend_location_provided_to_{{ occupant.name }} to _location_answer)
 	](else: ) [
 		Hmm that's not quite right. Maybe you have not met _friend . 
-		[[try again ->west village]] 
+		[[try again ->{{ location }}]] 
 	] 
 
 ](else:)[
