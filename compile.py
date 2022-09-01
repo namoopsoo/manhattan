@@ -19,6 +19,7 @@ def read_world():
         data = deepcopy(record)
         data["friend_location"] = friend_location
         data["friend_favorite_number"] = friend_favorite_number
+        data["occupant"]["name_snake"] = glom(record, "occupant.name").replace(" ", "_").lower()
         print(data)
 
         output = Template(template).render(
@@ -26,6 +27,7 @@ def read_world():
                 # occupant="HiImAnOccupant",
                 # friend="Im a Friend"
                 )
+        print(output)
         break
     #return twee
         # print(output)
