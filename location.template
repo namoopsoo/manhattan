@@ -4,8 +4,8 @@
 {
 <!-- is this a comment-->
 
-(set: _person_name to "{{ occupant }}")
-(set: _friend to "{{ friend }}")
+(set: _person_name to "{{ occupant.name }}")
+(set: _friend to "{{ occupant.friend }}")
 (set: _friend_actual_location to $location_samantha_pilot)
 (set: _correct_answer to $favorite_number_samantha_pilot)
 

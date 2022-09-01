@@ -10,9 +10,15 @@ def read_world():
         world = yaml.safe_load(file)
 
     template = Path("location.template").read_text()
+    for occupant in world:
+        friend = occupant["friend"]
+        friend_location = world[]
+        data = {}
     output = Template(template).render(
-            occupant="HiImAnOccupant",
-            friend="Im a Friend")
-    print(output)
+            # occupant="HiImAnOccupant",
+            # friend="Im a Friend"
+            )
+    return output
+    # print(output)
 
 read_world()
