@@ -6,7 +6,7 @@ from copy import deepcopy
 from jinja2 import Template
 
 
-def read_world():
+def read_world(verbose=False):
     with open("world.yaml", "r") as file:
         world = yaml.safe_load(file)
 
@@ -29,12 +29,14 @@ def read_world():
         data["friend_favorite_number"] = friend_favorite_number
         data["occupant"]["name_snake"] = glom(record, "occupant.name").replace(" ", "_").lower()
         data["location_snake"] = snake(record["location"])
-        print(data)
+        if verbose:
+            print(data)
 
         output = Template(template).render(data)
         twee += output
 
     return twee
+
 def snake(x):
     return x.replace(" ", "_").lower()
 
@@ -65,12 +67,20 @@ Welcome to the Manhattan Story !
 (link: "Ready for adventure?")[==
 [[go to map ->map]]
 
+"""
+    footer = """
 :: StoryTitle
 A Manhattan story.
 
+:: StoryData
+{
+	"ifid": "AFED6B55-7C3D-47E0-8C8A-52334B728D75"
+}
+
 """
 
-    return preamble + "\n".join(lines)
+    return preamble + "\n".join(lines) + footer
+
 
 def make_map_passage(world):
 

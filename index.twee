@@ -6,6 +6,12 @@ Welcome to the Manhattan Story !
 :: StoryTitle
 A Manhattan story.
 
+
+:: StoryData
+{
+	"ifid": "AFED6B55-7C3D-47E0-8C8A-52334B728D75"
+}
+
 (set: $visited_west_village to false)
 (set: $secret_correct_west_village to false)
 (set: $favorite_number_dolphin_lewis to "67895")
